@@ -1,0 +1,12 @@
+import mongoose, { mongo } from "mongoose";
+const CategorySchema = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true,
+
+    },
+
+},{timestamps:true});
+export const Category  = mongoose.model("Category", CategorySchema);
+
+// Add a category to the database
