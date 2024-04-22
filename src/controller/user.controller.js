@@ -242,6 +242,9 @@ throw new ApiError(400,"All fields are required.");
   ).select("-password -refreshToken");
   return res.status(200).json(new ApiResponse(200,user,'User details updated successfully.'));
 });
+
+const UpdateUSerAvatar = asyncHandler(async(req,res)=>{});
+
 export {
   RegisterUser,
   LoginUser,
@@ -250,4 +253,5 @@ export {
   ChangeCurrentPassword,
   getCurrentUser,
   updateAccountDetails,
+  UpdateUSerAvatar
 };
