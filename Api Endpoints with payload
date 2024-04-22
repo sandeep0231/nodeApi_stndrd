@@ -1,0 +1,146 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Node Standerd API Format",
+    "dateExported": "2024-04-22T14:28:32.647Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b5e1beb1-0944-4b4b-a0ee-15a826e88eab",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "Refresh Token",
+            "url": "localhost:8000/api/v1/users/refresh_token",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-22T11:19:05.236Z",
+            "modified": "2024-04-22T11:19:05.236Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"RefreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImlhdCI6MTcxMzc4NDE1NCwiZXhwIjoxNzE0NjQ4MTU0fQ.ww_uZxJOJy1Bb42tcNxuR97HOTC-LzIEAFM9gBIvqjs\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "02c4604c-2ade-4054-9a94-51fdd4ef26a1",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "logout",
+            "url": "localhost:8000/api/v1/users/logout",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-22T11:19:16.267Z",
+            "modified": "2024-04-22T11:19:16.267Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImVtYWlsIjoic2FuZGVlcEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InNhbmRlZXAzMjUiLCJmdWxsTmFtZSI6InNhbmRlZXAgbmVnaSIsImlhdCI6MTcxMzc4NDA5OCwiZXhwIjoxNzEzODcwNDk4fQ.DbLdoQ3jqOGTrrveAzs4UCKQcED2yy8C__rjGwNedlo"
+            }
+        },
+        {
+            "_id": "600b2df9-5a83-491e-9b76-7a0e6dc7c328",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "login",
+            "url": "localhost:8000/api/v1/users/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-04-22T11:19:21.867Z",
+            "modified": "2024-04-22T14:00:31.549Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"sandeep325\",\n  \"email\":\"sandeep@gmail.com\",\n  \"password\":\"sandeep@123\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b694ab30-6c51-49fd-a602-95fb6136d520",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "user register",
+            "url": "localhost:8000/api/v1/users/register",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-04-22T11:19:27.683Z",
+            "modified": "2024-04-22T11:19:27.683Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "sanat21"
+                    },
+                    {
+                        "name": "fullName",
+                        "value": "sanat jain1"
+                    },
+                    {
+                        "name": "email",
+                        "value": "sanat1@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "sanat@321"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "avatar",
+                        "value": "c:\\Users\\SandeepNegi\\OneDrive - Jorie Healthcare\\Pictures\\Screenshots\\Screenshot 2024-04-04 160917.png"
+                    },
+                    {
+                        "name": "coverImage",
+                        "value": "c:\\Users\\SandeepNegi\\OneDrive - Jorie Healthcare\\Pictures\\Screenshots\\Screenshot 2024-04-11 122318.png",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "dc1374ff-30b2-4444-acd8-7888d6c22c37",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "Change User  Current Password",
+            "url": "localhost:8000/api/v1/users/changeCurrent_password",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-04-22T13:46:04.616Z",
+            "modified": "2024-04-22T13:46:04.616Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImVtYWlsIjoic2FuZGVlcEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InNhbmRlZXAzMjUiLCJmdWxsTmFtZSI6InNhbmRlZXAgbmVnaSIsImlhdCI6MTcxMzc5MzQ4NCwiZXhwIjoxNzEzODc5ODg0fQ.J5X6RjPddNwCW1RknvG48WOMJesVlo6jCmGnaOBb4gg"
+            }
+        },
+        {
+            "_id": "8ef6ea45-7f22-4872-968a-34ca52542ea5",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "Get Current User",
+            "url": "localhost:8000/api/v1/users/getCurrent_user",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-22T14:03:18.682Z",
+            "modified": "2024-04-22T14:03:18.682Z",
+            "headers": []
+        },
+        {
+            "_id": "964175ca-31b5-4606-9880-966a91237b85",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "USer Account Update",
+            "url": "localhost:8000/api/v1/users/user_accountInfoUpdate",
+            "method": "PATCH",
+            "sortNum": 70000,
+            "created": "2024-04-22T14:22:52.742Z",
+            "modified": "2024-04-22T14:22:52.742Z",
+            "headers": []
+        }
+    ]
+}
