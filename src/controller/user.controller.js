@@ -179,28 +179,28 @@ const RefreshAccessToken = asyncHandler(async (req, res) => {
     if (IncomeingRefreshTKN !== user?.refreshToken) {
       throw new ApiError(401, "Refresh token invalid or exipired.");
     }
-  
-  
+
     const options = {
       httpOnly: true,
       secure: true,
     };
-  
-    const { AccessToken, RefreshToken }  = await generateAccessAndRefreshToken(user?._id);
-    return res
-    .status(200)
-    .cookie("AccessToken", AccessToken, options)
-    .cookie("RefreshToken", RefreshToken, options)
-    .json(
-      new ApiResponse(
-        200,
-        {  AccessToken, RefreshToken },
-        "Access Token Refreshed.",
-      ),
-    );
-  } catch(error){
-throw new ApiError(401, error?.message || "Invalid refresh  token.");
-  }
 
+    const { AccessToken, RefreshToken } = await generateAccessAndRefreshToken(
+      user?._id,
+    );
+    return res
+      .status(200)
+      .cookie("AccessToken", AccessToken, options)
+      .cookie("RefreshToken", RefreshToken, options)
+      .json(
+        new ApiResponse(
+          200,
+          { AccessToken, RefreshToken },
+          "Access Token Refreshed.",
+        ),
+      );
+  } catch (error) {
+    throw new ApiError(401, error?.message || "Invalid refresh  token.");
+  }
 });
 export { RegisterUser, LoginUser, LogoutUser, RefreshAccessToken };
