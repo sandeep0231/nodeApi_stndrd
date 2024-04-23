@@ -227,9 +227,9 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 
 const updateAccountDetails = asyncHandler(async (req, res) => {
   const { fullName, email } = req?.body;
-if(!fullName || !email) {
-throw new ApiError(400,"All fields are required.");
-}
+  if (!fullName || !email) {
+    throw new ApiError(400, "All fields are required.");
+  }
   const user = await User.findByIdAndUpdate(
     req?.user?.id,
     {
@@ -240,11 +240,65 @@ throw new ApiError(400,"All fields are required.");
     },
     { new: true },
   ).select("-password -refreshToken");
-  return res.status(200).json(new ApiResponse(200,user,'User details updated successfully.'));
+  return res
+    .status(200)
+    .json(new ApiResponse(200, user, "User details updated successfully."));
 });
 
-const UpdateUSerAvatar = asyncHandler(async(req,res)=>{});
+const UpdateUserAvatar = asyncHandler(async (req, res) => {
+  const AvatarLocalPath = req?.file?.path;
+  console.log(AvatarLocalPath);
+  if (!AvatarLocalPath) {
+    throw new ApiError(400, "User Avatar is required.");
+  }
+  const avatarCloudUrl = await UploadOnCloudinary(AvatarLocalPath);
+  if (!avatarCloudUrl?.url) {
+    throw new ApiError(400, "Error while uploading a Avatar.");
+  }
 
+  const userData = await User.findByIdAndUpdate(
+    req?.user?.id,
+    {
+      $set: {
+        avatar: avatarCloudUrl?.url,
+      },
+    },
+    { new: true },
+  ).select("-password -refreshToken");
+  // send response to client
+  return res
+    .status(200)
+    .json(new ApiResponse(200, userData, "User avatar uloaded successfully."));
+});
+
+const UpdateUserCoverImage = asyncHandler(async (req, res) => {
+  const coverImageLocalPath = req?.file?.path;
+  // console.log(coverImageLocalPath);
+  if (!coverImageLocalPath) {
+    throw new ApiError(400, "User coverimage is required.");
+  }
+  const CoverImgCloud = await UploadOnCloudinary(coverImageLocalPath);
+  if (!CoverImgCloud) {
+    throw new ApiError(400, "Error while uploading a cover image.");
+  }
+
+  // update cover img url on db
+  const userData = await User.findByIdAndUpdate(
+    req?.user?.id,
+    {
+      $set: {
+        coverImage: CoverImgCloud?.url,
+      },
+    },
+    { new: true },
+  ).select("-password -refreshToken");
+  // send response to client
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(200, userData, "User cover image uploaded successfully."),
+    );
+});
 export {
   RegisterUser,
   LoginUser,
@@ -253,5 +307,6 @@ export {
   ChangeCurrentPassword,
   getCurrentUser,
   updateAccountDetails,
-  UpdateUSerAvatar
+  UpdateUserAvatar,
+  UpdateUserCoverImage,
 };
