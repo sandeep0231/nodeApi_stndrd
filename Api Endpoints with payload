@@ -1,8 +1,9 @@
 {
-    "client": "Thunder Client",
+    "clientName": "Thunder Client",
     "collectionName": "Node Standerd API Format",
-    "dateExported": "2024-04-22T14:28:32.647Z",
-    "version": "1.1",
+    "collectionId": "85a27b7e-a726-42bc-b547-33712e966953",
+    "dateExported": "2024-04-23T14:01:12.501Z",
+    "version": "1.2",
     "folders": [],
     "requests": [
         {
@@ -134,13 +135,30 @@
             "_id": "964175ca-31b5-4606-9880-966a91237b85",
             "colId": "85a27b7e-a726-42bc-b547-33712e966953",
             "containerId": "",
-            "name": "USer Account Update",
+            "name": "User Account Update",
             "url": "localhost:8000/api/v1/users/user_accountInfoUpdate",
             "method": "PATCH",
             "sortNum": 70000,
             "created": "2024-04-22T14:22:52.742Z",
             "modified": "2024-04-22T14:22:52.742Z",
             "headers": []
+        },
+        {
+            "_id": "a827043b-0ef6-4f36-a90b-74631908e1c9",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "Update User Avatar",
+            "url": "localhost:8000/api/v1/users/updateUser_avatar",
+            "method": "PATCH",
+            "sortNum": 80000,
+            "created": "2024-04-23T11:25:48.158Z",
+            "modified": "2024-04-23T11:25:48.158Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImVtYWlsIjoic2FuZGVlcEBlbWFpbC5jby5pbiIsInVzZXJuYW1lIjoic2FuZGVlcDMyNSIsImZ1bGxOYW1lIjoibmVnaSBzYW5kZWVwIiwiaWF0IjoxNzEzODcxNDczLCJleHAiOjE3MTM5NTc4NzN9.nFxSqsJLxKWvcTtlsZE8JjzoQ6SM5nAUDZ58on_CX8w"
+            }
         }
-    ]
+    ],
+    "ref": "1QqokWbI0J7zEJ-81u899bAgy6zLP-swvhIlK2Bl_MIo_TLLzi8nxehZUETDSeR8NvqoJ3HwZkM9vpX4McH6sw"
 }
