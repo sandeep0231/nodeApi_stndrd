@@ -299,6 +299,14 @@ const UpdateUserCoverImage = asyncHandler(async (req, res) => {
       new ApiResponse(200, userData, "User cover image uploaded successfully."),
     );
 });
+
+const GetUserChannelProfile = asyncHandler(async (req, res) => {
+  const {username} = req?.params;
+  if(!username?.trim()){
+    throw new ApiError(400,"Username is missing.");
+
+  }
+});
 export {
   RegisterUser,
   LoginUser,
@@ -309,4 +317,5 @@ export {
   updateAccountDetails,
   UpdateUserAvatar,
   UpdateUserCoverImage,
+  GetUserChannelProfile,
 };
