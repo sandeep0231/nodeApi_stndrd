@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Node Standerd API Format",
     "collectionId": "85a27b7e-a726-42bc-b547-33712e966953",
-    "dateExported": "2024-04-23T14:01:12.501Z",
+    "dateExported": "2024-04-24T10:37:38.807Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -158,7 +158,39 @@
                 "type": "bearer",
                 "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImVtYWlsIjoic2FuZGVlcEBlbWFpbC5jby5pbiIsInVzZXJuYW1lIjoic2FuZGVlcDMyNSIsImZ1bGxOYW1lIjoibmVnaSBzYW5kZWVwIiwiaWF0IjoxNzEzODcxNDczLCJleHAiOjE3MTM5NTc4NzN9.nFxSqsJLxKWvcTtlsZE8JjzoQ6SM5nAUDZ58on_CX8w"
             }
+        },
+        {
+            "_id": "29af79a1-f577-4c47-969e-b24c24568ee4",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "Get User Channel Profile",
+            "url": "localhost:8000/api/v1/users/userChannel_profile",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-04-24T07:28:20.395Z",
+            "modified": "2024-04-24T07:28:20.395Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImVtYWlsIjoic2FuZGVlcEBlbWFpbC5jby5pbiIsInVzZXJuYW1lIjoic2FuZGVlcDMyNSIsImZ1bGxOYW1lIjoibmVnaSBzYW5kZWVwIiwiaWF0IjoxNzEzOTQzNjE1LCJleHAiOjE3MTQwMzAwMTV9.Lnmx1Hd_yua1bVwrnxxbrIIuqTKnMRmTyGfZK0LHano"
+            }
+        },
+        {
+            "_id": "fdb0daec-8a17-42cf-b29f-03ae44d66e91",
+            "colId": "85a27b7e-a726-42bc-b547-33712e966953",
+            "containerId": "",
+            "name": "User Watch History",
+            "url": "localhost:8000/api/v1/users//watichhistory",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-04-24T10:37:08.518Z",
+            "modified": "2024-04-24T10:37:08.518Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWUyYTU3YzM0YzRkMDFmMDQ1YWFhZCIsImVtYWlsIjoic2FuZGVlcEBlbWFpbC5jby5pbiIsInVzZXJuYW1lIjoic2FuZGVlcDMyNSIsImZ1bGxOYW1lIjoibmVnaSBzYW5kZWVwIiwiaWF0IjoxNzEzOTQzNjE1LCJleHAiOjE3MTQwMzAwMTV9.Lnmx1Hd_yua1bVwrnxxbrIIuqTKnMRmTyGfZK0LHano"
+            }
         }
     ],
-    "ref": "1QqokWbI0J7zEJ-81u899bAgy6zLP-swvhIlK2Bl_MIo_TLLzi8nxehZUETDSeR8NvqoJ3HwZkM9vpX4McH6sw"
+    "ref": "1QqokWbI0J7zEJ-81u899RGWKhqz-wCle56e6RHxqCowKHa96PPYUgWUpn1IVRpg8hvxBcLgHaUAWt2g4btQVg"
 }
