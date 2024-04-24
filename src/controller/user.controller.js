@@ -4,6 +4,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { User } from "../models/User.Model.js";
 import { UploadOnCloudinary } from "../utils/cloudinary.js";
 import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
 // Internal services  methods start here
 const generateAccessAndRefreshToken = async (UserId) => {
   try {
@@ -346,14 +347,65 @@ const GetUserChannelProfile = asyncHandler(async (req, res) => {
         username: 1,
         subscribersCount: 1,
         channelsSubscribedToCount: 1,
+        isSubscribed: 1,
+        avatar: 1,
+        email: 1,
+        coverImage: 1,
       },
     },
   ]);
 
-  if (!channel) {
-    throw new ApiError(404,"User not found.");
+  if (!channel?.length) {
+    throw new ApiError(404, "Channel does not exists.");
   }
+  return res
+    .status(200)
+    .json(new ApiResponse(200, channel[0], "Channel fetched successfully."));
 });
+
+const getWatchHistory = asyncHandler(async (req, res) => {
+  const user = await User.aggregate([
+    {
+      $match: {
+        _id: new mongoose.Types.ObjectId(req.user.id),
+      },
+    },
+    {
+      $lookup: {
+        from: "videos",
+        localField: "watchHistory",
+        foreignField: "_id",
+        as: "watchHistory",
+        pipeline:[
+          {$lookup:{
+            from:"users",
+            localField:"owner",
+            foreignField  :"_id",
+            as:"owner",
+            pipeline:[
+              {
+                $project:{
+                  fullName:1,
+                  username:1,
+                  avatar:1
+                }
+              }
+            ]
+
+          }},{$addFields:{
+            owner:{
+              $first:"$owner"
+            }
+          }}
+        ]
+      },
+    },
+
+  ]);
+
+  return res.status(200).json(new ApiResponse(200,user[0].watchHistory,"User waitch history fetched successfully."));
+});
+
 export {
   RegisterUser,
   LoginUser,
@@ -365,4 +417,5 @@ export {
   UpdateUserAvatar,
   UpdateUserCoverImage,
   GetUserChannelProfile,
+  getWatchHistory,
 };
